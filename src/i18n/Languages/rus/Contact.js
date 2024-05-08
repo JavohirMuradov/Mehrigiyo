@@ -1,4 +1,4 @@
-var ContactRu = {
+const ContactRu = {
     
 }
 

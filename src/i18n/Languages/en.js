@@ -6,7 +6,7 @@ import ProductsEn from "./eng/Products"
 
 
 
-var en = {
+const en = {
     translation: {
         Home: HomeEn,
         Contact: ContactEn,

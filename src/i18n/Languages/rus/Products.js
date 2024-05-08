@@ -1,4 +1,4 @@
-var ProductsRu = {
+const ProductsRu = {
     
 }
 

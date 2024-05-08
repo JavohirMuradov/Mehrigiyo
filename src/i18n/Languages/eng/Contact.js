@@ -1,4 +1,4 @@
-var ContactEn = {
+const ContactEn = {
     
 }
 

@@ -1,4 +1,4 @@
-var CertificateEn = {
+const CertificateEn = {
 
 }
 

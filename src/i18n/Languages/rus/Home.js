@@ -1,4 +1,4 @@
-var HomeRu = {
+const HomeRu = {
     
 }
 

@@ -5,7 +5,7 @@ import NewsRu from "./rus/News"
 import ProductsRu from "./rus/Products"
 
 
-var ru = {
+const ru = {
     translation: {
         Home: HomeRu,
         Contact: ContactRu,

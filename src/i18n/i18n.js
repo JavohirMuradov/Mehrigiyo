@@ -1,20 +1,12 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
+import ru from "./Languages/ru";
+import en from "./Languages/en";
 
 // Sample translation resources
 const resources = {
-  en: {
-    translation: {
-      greeting: "Hello, World!",
-      xexe: "Interesting ?",
-    },
-  },
-  ru: {
-    translation: {
-      greeting: "Привет Мир!",
-      xexe: "Прикольно ?",
-    },
-  },
+  en: en,
+  ru: ru
 };
 
 i18n

@@ -1,4 +1,4 @@
-var NewsEn = {
+const NewsEn = {
     
 }
 
