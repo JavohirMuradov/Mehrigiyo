@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import CretificateCard from "./CretificateCard";
 
 const Certificates = () => {
   return (
-    <div>Certificates</div>
-  )
-}
+    <div>
+      <CretificateCard />
+    </div>
+  );
+};
 
-export default Certificates
+export default Certificates;
