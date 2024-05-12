@@ -7,11 +7,26 @@ import ProductsRu from "./rus/Products"
 
 const ru = {
     translation: {
-        Home: HomeRu,
-        Contact: ContactRu,
-        Certificate: CertificateRu,
-        News: NewsRu,
-        Products: ProductsRu,
+        header: {
+            topHeader: {
+                slogan: "Mehrigiyo поможет вам во всём",
+                days: "Пн - Сб 8:00 - 6:30, Воскресенье - ЗАКРЫТО"
+            },
+            bottomHeader: {
+                home: "Главная",
+                contact: "Связаться",
+                about: "О компании",
+                certificate: "Сертификаты",
+                news: "Новости",
+                products: "Продукты",
+                call: "Звоните в любое время",
+            },
+        },
+        home: HomeRu,
+        contact: ContactRu,
+        certificate: CertificateRu,
+        news: NewsRu,
+        products: ProductsRu,
     },
 }
 

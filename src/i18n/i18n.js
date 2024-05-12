@@ -13,7 +13,7 @@ i18n
   .use(initReactI18next) // Passes i18n instance to react-i18next
   .init({
     resources,
-    lng: "en", // Default language
+    lng: "ru", // Default language
     interpolation: {
       escapeValue: false, // Not needed for React
     },

@@ -8,7 +8,23 @@ export default withMT({
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: '1rem',
+        sm: '2rem',
+        lg: '3rem',
+        xl: '4rem',
+        '2xl': '5rem',
+      },
+    },
+    extend: {
+      colors: {
+        gray: "#6e7673",
+        green: "#49a760",
+        yellow: "#f7c35f"
+      }
+    },
   },
   plugins: [],
 })

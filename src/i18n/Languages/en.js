@@ -8,11 +8,26 @@ import ProductsEn from "./eng/Products"
 
 const en = {
     translation: {
-        Home: HomeEn,
-        Contact: ContactEn,
-        Certificate: CertificateEn,
-        News: NewsEn,
-        Products: ProductsEn,
+        header: {
+            topHeader: {
+                slogan: "Mehrigiyo will help you in everything",
+                days: "Mon - Sat 8:00 - 6:30, Sunday - CLOSED"
+            },
+            bottomHeader: {
+                home: "Home",
+                contact: "Contact",
+                about: "About company",
+                certificate: "Certificates",
+                news: "News",
+                products: "Products",
+                call: "Call Anytime",
+            },
+        },
+        home: HomeEn,
+        contact: ContactEn,
+        certificate: CertificateEn,
+        news: NewsEn,
+        products: ProductsEn,
     },
 }
 
