@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+// eslint-disable-next-line no-undef
 const withMT = require("@material-tailwind/react/utils/withMT");
 
 export default withMT({
@@ -22,7 +23,12 @@ export default withMT({
       colors: {
         gray: "#6e7673",
         green: "#49a760",
-        yellow: "#f7c35f"
+        yellow: "#f7c35f",
+        grey: "#b5c3be"
+      },
+      backgroundImage: {
+        'header': "url('./public/Group 1.png')",
+        'footer': "url('./public/Desktop - 1.png')"
       }
     },
   },

@@ -1,11 +1,10 @@
-import React from 'react'
 import Layout from './Layout/Layout'
 import { Route, Routes } from 'react-router-dom'
-import Home from './Home/Home'
-import Contact from './Contact/Contact'
-import Certificates from './Certificates/Certificates'
-import News from './News/News'
-import Products from './Products/Products'
+import Home from './Pages/Home/Home'
+import Contact from './Pages/Contact/Contact'
+import Certificates from './Pages/Certificates/Certificates'
+import News from './Pages/News/News'
+import Products from './Pages/Products/Products'
 
 const App = () => {
   return (

@@ -1,4 +1,3 @@
-import React from "react";
 import CretificateCard from "./CretificateCard";
 
 const Certificates = () => {
