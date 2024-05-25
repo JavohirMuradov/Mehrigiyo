@@ -1,35 +1,142 @@
 import { useTranslation } from "react-i18next"
+import { FaFacebookSquare, FaInstagram, FaTelegramPlane, FaYoutube, FaChevronRight, FaPhone } from "react-icons/fa";
+import { IoIosMail } from "react-icons/io";
+import { IoLocationSharp } from "react-icons/io5";
+import { Link } from "react-router-dom";
 import logoLight from "../../public/logo-light.png"
 
 const Footer = () => {
   const { t } = useTranslation("footer")
+  const navigation = [
+    {
+      name: t("navigation.home"),
+      path: "/home",
+    },
+    {
+      name: t("navigation.about"),
+      path: "/home",
+    },
+    {
+      name: t("navigation.certificates"),
+      path: "/certificates",
+    },
+    {
+      name: t("navigation.products"),
+      path: "/products",
+    },
+    {
+      name: t("navigation.news"),
+      path: "/news",
+    },
+    {
+      name: t("navigation.contact"),
+      path: "/contact",
+    }
+  ]
+  const icons = [
+    {
+      icon: "Facebook",
+      element: <FaFacebookSquare size={25} className="text-white hover:text-yellow duration-300" />,
+      path: "https://mehrigiyo.org/ru/"
+    },
+    {
+      icon: "Telegram",
+      element: <FaTelegramPlane size={25} className="text-white hover:text-yellow duration-300" />,
+      path: "https://mehrigiyo.org/ru/"
+    },
+    {
+      icon: "Youtube",
+      element: <FaYoutube size={25} className="text-white hover:text-yellow duration-300" />,
+      path: "https://mehrigiyo.org/ru/"
+    },
+    {
+      icon: "Instagram",
+      element: <FaInstagram size={25} className="text-white hover:text-yellow duration-300" />,
+      path: "https://mehrigiyo.org/ru/"
+    },
+  ]
+  const news = [
+    {
+      path: "/news/broadcast",
+      img: "../../public/tv.jpg",
+      title: t("news.tv")
+    },
+    {
+      path: "/news/xait",
+      img: "../../public/hay.jpg",
+      title: t("news.eid")
+    },
+    {
+      path: "/news/1-june",
+      img: "../../public/v1.jpg",
+      title: t("news.june")
+    },
+  ]
   return (
     <footer>
-      <div className="bg-footer">
-        <div className="container">
-          <div>
-            <div className="w-full 2xl:w-1/4 flex flex-col gap-5">
-              <img src={logoLight} alt="" className="w-48" />
-              <h1 className="w-full text-sm text-grey">{t("h1")}</h1>
-              <div></div>
+      <div className="w-full bg-footer1 h-4"></div>
+      <div className="2xl:bg-footer bg-footerGreen text-white font-nunito">
+        <div className="container py-10 grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-4 gap-20">
+          <div className="w-full flex flex-col gap-5">
+            <img src={logoLight} alt="" className="w-48" />
+            <h1 className="w-full text-sm text-grey max-w-[271px] 2xl:max-w-[291px]">{t("h1")}</h1>
+            <div className="flex flex-row gap-3 lg:gap-5 duration-300">
+              {icons.map((icon) => {
+                return <Link key={icon.icon} to={icon.path}>
+                  {icon.element}
+                </Link>
+              })}
             </div>
-            <ul>
-              <li>
-                <svg width="38" height="70" viewBox="0 0 38 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M3.8284 1.1716C3.04735 0.390553 1.78102 0.390553 0.999971 1.1716C0.218922 1.95265 0.218922 3.21898 0.999971 4.00003L3.8284 1.1716ZM0.999971 4.00003L35 38L37.8284 35.1716L3.8284 1.1716L0.999971 4.00003Z" fill="#B5C3BE" />
-                  <path d="M0.585786 66.5858C-0.195262 67.3668 -0.195262 68.6332 0.585786 69.4142C1.36684 70.1953 2.63316 70.1953 3.41421 69.4142L0.585786 66.5858ZM3.41421 69.4142L37.4142 35.4142L34.5858 32.5858L0.585786 66.5858L3.41421 69.4142Z" fill="#B5C3BE" />
-                </svg>
-                Home
-              </li>
+          </div>
+          <div className="flex flex-col gap-3 w-full">
+            <h3 className="text-lg">{t("h3")}</h3>
+            <ul className="flex flex-col gap-5">
+              {navigation.map((li) => {
+                return <li key={li.name}>
+                  <Link to={li.path} className="text-grey flex flex-row items-center gap-2 hover:text-yellow text-sm duration-300">
+                    <FaChevronRight size={10} />
+                    {li.name}
+                  </Link>
+                </li>
+              })}
+            </ul>
+          </div>
+          <div className="flex flex-col gap-5">
+            <h3>{t("news.news")}</h3>
+            <ul className="grid grid-rows-3 gap-5">
+              {news.map((news) => {
+                return <li key={news.title}>
+                  <Link to="/news/broadcast" className="flex flex-row items-center gap-3">
+                    <img src={news.img} alt="tv" className="w-[90px] h-[65px]" />
+                    {news.title}
+                  </Link>
+                </li>
+              })}
             </ul>
           </div>
           <div>
+            <h3 className="mb-5">{t("feedback")}</h3>
+            <ul className="grid grid-rows-3 gap-10">
+              <li className="flex flex-col gap-5">
+                <FaPhone className="text-yellow hover:text-white duration-300" />
+                <hr className="max-w-[271px] text-[#ffffff1a]" />
+              </li>
+              <li className="flex flex-col gap-5">
+                <IoIosMail className="text-yellow hover:text-white duration-300" size={20} />
+                <hr className="max-w-[271px] text-[#ffffff1a]" />
+              </li>
+              <li className="flex flex-col gap-5">
+                <IoLocationSharp className="text-yellow hover:text-white duration-300" />
+                <hr className="max-w-[271px] text-[#ffffff1a]" />
+              </li>
+            </ul>
           </div>
         </div>
       </div>
-      <div className="bg-[#1f4e3d]">
-        <div className="container">
-
+      <div className="bg-[#1f4e3d] relative">
+      <div className="w-full bg-footer2 absolute h-4 -top-4"></div>
+        <div className="container flex flex-row items-center justify-center py-10 text-grey">
+          <h5 className="text-sm">© Copyright 2022 - Mehrigiyo || Designed by © <span className="text-green">Innovations</span> 2021</h5>
         </div>
       </div>
     </footer>

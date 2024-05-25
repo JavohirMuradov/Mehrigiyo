@@ -30,7 +30,7 @@ function Icon({ id, open }) {
 }
 
 const Header = () => {
-  var { t } = useTranslation("header")
+  var { t, i18n } = useTranslation("header")
   var { pathname } = useLocation()
   const [openNav, setOpenNav] = useState(false);
   const [headerBg, setHeaderBg] = useState(false);
@@ -59,7 +59,7 @@ const Header = () => {
 
   return (
     <>
-      <div className="bg-[#f6f5f2] py-2 hidden lg:block">
+      <div className="bg-[#f6f5f2] py-2 hidden lg:block font-nunito">
         <div className="hidden lg:flex flex-row justify-between container text-xs">
           <div className="flex flex-row gap-5 items-center">
             <div className="flex flex-row items-center gap-2">
@@ -131,7 +131,7 @@ const Header = () => {
                 <div className={`${pathname === "/certificate" ? "scale-y-100" : "scale-y-0"} group-hover:scale-y-100 absolute h-[2px] w-1/3 transition duration-700 bg-yellow right-0 -bottom-[2px]`}></div>
                 <div className={`${pathname === "/certificate" ? "scale-y-100" : "scale-y-0"} group-hover:scale-y-100 w-1/6 transition duration-700 bg-yellow absolute h-[2px] bottom-[1px] -rotate-[20deg] left-1/3`}></div>
                 <div className={`${pathname === "/certificate" ? "scale-y-100" : "scale-y-0"} group-hover:scale-y-100 absolute h-[2px] w-1/6 transition duration-700 bg-yellow bottom-[1px] right-1/3 rotate-[20deg] `}></div>
-                <NavLink to={"/certificate"} className={`${li === true ? "scale-y-100" : "scale-0"} absolute -bottom-10 rounded-md -right-4 -left-4 shadow-md py-2 px-4 flex flex-row items-center justify-center duration-300`}>
+                <NavLink to={"/certificate"} className={`${li === true ? "scale-y-100" : "scale-y-0"} absolute -bottom-10 rounded-md -right-4 -left-4 shadow-md py-2 px-4 flex flex-row items-center justify-center duration-300`}>
                   <button>
                     {t("bottomHeader.certificate")}
                   </button>
@@ -161,8 +161,12 @@ const Header = () => {
             </ul>
           </div>
           <div className='md:flex flex-row items-center gap-5 hidden ml-10 2xl:ml-0'>
-            <img src={ru} alt="" />
-            <img src={uk} alt="" />
+            <button className='scale-100 hover:scale-110 duration-300'>
+              <img src={ru} alt={t("altRu")} onClick={() => i18n.changeLanguage("ru")} />
+            </button>
+            <button className='scale-100 hover:scale-110 duration-300'>
+              <img src={uk} alt={t("altEn")} onClick={() => i18n.changeLanguage("en")} />
+            </button>
             <button className='flex flex-row text-white py-5 px-4 bg-[#f7c35f] rounded-xl gap-1'>
               <svg width="306" height="259" className='w-10 h-10' viewBox="0 0 306 259" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M136.263 186.383C120.791 182.971 74.1512 131.732 71.5308 118.682C68.9104 105.632 88.2515 98.0922 88.1244 89.1391C87.9972 80.186 58.1359 30.9227 48.192 28.271C38.2481 25.6192 6.49969 53.8592 5.98273 75.0907C5.51244 94.4052 31.7241 143.457 68.9242 183.544C99.3189 216.297 153.155 253.199 175.574 253.744C197.994 254.29 228.107 222.322 226.247 213.67C224.387 205.019 179.634 170.986 169.657 169.711C159.679 168.435 145.366 188.391 136.263 186.383Z" stroke="white" strokeWidth="10" />
@@ -262,8 +266,12 @@ const Header = () => {
             </ul>
           </div>
           <div className='md:flex flex-row items-center gap-5 hidden ml-10 2xl:ml-0'>
-            <img src={ru} alt="" />
-            <img src={uk} alt="" />
+            <button className='scale-100 hover:scale-110 duration-300'>
+              <img src={ru} alt={t("altRu")} onClick={() => i18n.changeLanguage("ru")} />
+            </button>
+            <button className='scale-100 hover:scale-110 duration-300'>
+              <img src={uk} alt={t("altEn")} onClick={() => i18n.changeLanguage("en")} />
+            </button>
             <button className='flex flex-row text-white py-5 px-4 bg-[#f7c35f] rounded-xl gap-1'>
               <svg width="306" height="259" className='w-10 h-10' viewBox="0 0 306 259" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M136.263 186.383C120.791 182.971 74.1512 131.732 71.5308 118.682C68.9104 105.632 88.2515 98.0922 88.1244 89.1391C87.9972 80.186 58.1359 30.9227 48.192 28.271C38.2481 25.6192 6.49969 53.8592 5.98273 75.0907C5.51244 94.4052 31.7241 143.457 68.9242 183.544C99.3189 216.297 153.155 253.199 175.574 253.744C197.994 254.29 228.107 222.322 226.247 213.67C224.387 205.019 179.634 170.986 169.657 169.711C159.679 168.435 145.366 188.391 136.263 186.383Z" stroke="white" strokeWidth="10" />

@@ -1,21 +1,34 @@
-import Layout from './Layout/Layout'
+import { lazy, Suspense } from 'react'
 import { Route, Routes } from 'react-router-dom'
-import Home from './Pages/Home/Home'
-import Contact from './Pages/Contact/Contact'
-import Certificates from './Pages/Certificates/Certificates'
-import News from './Pages/News/News'
-import Products from './Pages/Products/Products'
+import Layout from './Layout/Layout'
+import icon from "../public/favicon-32x32.png"
+
+const Home = lazy(() => import('./Pages/Home/Home'))
+const Contact = lazy(() => import('./Pages/Contact/Contact'))
+const Certificates = lazy(() => import('./Pages/Certificates/Certificates'))
+const News = lazy(() => import('./Pages/News/News'))
+const Products = lazy(() => import('./Pages/Products/Products'))
+const Tv = lazy(() => import('./Pages/News/News/Tv'))
+const Xait = lazy(() => import('./Pages/News/News/Xait'))
+const June = lazy(() => import('./Pages/News/News/June'))
 
 const App = () => {
   return (
     <Layout>
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/contact' element={<Contact />} />
-        <Route path='/certificates' element={<Certificates />} />
-        <Route path='/news' element={<News />} />
-        <Route path='/products' element={<Products />} />
-      </Routes>
+      <Suspense fallback={<div className='w-screen h-screen flex flex-row items-center justify-center'>
+        <img src={icon} alt="" className="animate-rotate" />
+      </div>}>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/certificates' element={<Certificates />} />
+          <Route path='/news' element={<News />} />
+          <Route path='/products' element={<Products />} />
+          <Route path='/news/broadcast' element={<Tv />} />
+          <Route path='/news/xait' element={<Xait />} />
+          <Route path='/news/1-june' element={<June />} />
+        </Routes>
+      </Suspense>
     </Layout>
   )
 }
