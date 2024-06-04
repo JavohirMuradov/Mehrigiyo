@@ -42,6 +42,12 @@ const ru = {
             june: "1-июня"
         }
     },
+    register: {
+        fullName: "Полное имя",
+        telephone: "Телефон номер",
+        password: "Пароль",
+        h1: "Войдите в свой аккаунт",
+    },
     home: HomeRu,
     contact: ContactRu,
     certificate: CertificateRu,

@@ -43,6 +43,12 @@ const en = {
             june: "1-June"
         },
     },
+    register: {
+        fullName: "Full Name",
+        telephone: "Phone number",
+        password: "Password",
+        h1: "Enter to your account"
+    },
     home: HomeEn,
     contact: ContactEn,
     certificate: CertificateEn,

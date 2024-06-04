@@ -9,7 +9,7 @@ import {
 import logo from '../../public/logo.png';
 import ru from '../../public/ru.png';
 import uk from '../../public/uk.png';
-import { NavLink, useLocation } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 
 // eslint-disable-next-line react/prop-types
 function Icon({ id, open }) {
@@ -167,18 +167,20 @@ const Header = () => {
             <button className='scale-100 hover:scale-110 duration-300'>
               <img src={uk} alt={t("altEn")} onClick={() => i18n.changeLanguage("en")} />
             </button>
-            <button className='flex flex-row text-white py-5 px-4 bg-[#f7c35f] rounded-xl gap-1'>
-              <svg width="306" height="259" className='w-10 h-10' viewBox="0 0 306 259" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M136.263 186.383C120.791 182.971 74.1512 131.732 71.5308 118.682C68.9104 105.632 88.2515 98.0922 88.1244 89.1391C87.9972 80.186 58.1359 30.9227 48.192 28.271C38.2481 25.6192 6.49969 53.8592 5.98273 75.0907C5.51244 94.4052 31.7241 143.457 68.9242 183.544C99.3189 216.297 153.155 253.199 175.574 253.744C197.994 254.29 228.107 222.322 226.247 213.67C224.387 205.019 179.634 170.986 169.657 169.711C159.679 168.435 145.366 188.391 136.263 186.383Z" stroke="white" strokeWidth="10" />
-                <path d="M224.5 110C266.75 110 301 86.4949 301 57.5C301 28.5051 266.75 5 224.5 5C182.25 5 148 28.5051 148 57.5C148 67.1448 151.79 76.1822 158.403 83.9491L148 110L183.539 101.848C195.382 107.01 209.432 110 224.5 110Z" stroke="white" strokeWidth="10" />
-                <circle cx="198.5" cy="57.5" r="7.5" fill="white" />
-                <circle cx="250.5" cy="57.5" r="7.5" fill="white" />
-                <circle cx="224.5" cy="57.5" r="7.5" fill="white" />
-              </svg>
-              <div className='flex flex-col items-start'>
-                <span className='text-xs'>{t("bottomHeader.call")}</span>
-                <span className='font-semibold'>+998 97 700 78 72</span>
-              </div>
+            <button className='text-white py-5 px-4 bg-[#f7c35f] rounded-xl'>
+              <Link to={'/register'} className='flex flex-row gap-1'>
+                <svg width="306" height="259" className='w-10 h-10' viewBox="0 0 306 259" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M136.263 186.383C120.791 182.971 74.1512 131.732 71.5308 118.682C68.9104 105.632 88.2515 98.0922 88.1244 89.1391C87.9972 80.186 58.1359 30.9227 48.192 28.271C38.2481 25.6192 6.49969 53.8592 5.98273 75.0907C5.51244 94.4052 31.7241 143.457 68.9242 183.544C99.3189 216.297 153.155 253.199 175.574 253.744C197.994 254.29 228.107 222.322 226.247 213.67C224.387 205.019 179.634 170.986 169.657 169.711C159.679 168.435 145.366 188.391 136.263 186.383Z" stroke="white" strokeWidth="10" />
+                  <path d="M224.5 110C266.75 110 301 86.4949 301 57.5C301 28.5051 266.75 5 224.5 5C182.25 5 148 28.5051 148 57.5C148 67.1448 151.79 76.1822 158.403 83.9491L148 110L183.539 101.848C195.382 107.01 209.432 110 224.5 110Z" stroke="white" strokeWidth="10" />
+                  <circle cx="198.5" cy="57.5" r="7.5" fill="white" />
+                  <circle cx="250.5" cy="57.5" r="7.5" fill="white" />
+                  <circle cx="224.5" cy="57.5" r="7.5" fill="white" />
+                </svg>
+                <div className='flex flex-col items-start'>
+                  <span className='text-xs'>{t("bottomHeader.call")}</span>
+                  <span className='font-semibold'>+998 97 700 78 72</span>
+                </div>
+              </Link>
             </button>
           </div>
           <IconButton
